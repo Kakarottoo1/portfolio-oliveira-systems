@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useMemo, useState } from "react";
-import type { ReactNode } from "react";
+import type { CSSProperties, ReactNode } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import {
   ArrowRight,
@@ -23,7 +23,7 @@ import {
   X,
 } from "lucide-react";
 import { motion } from "motion/react";
-import { CarouselItem, content, Language, languages, PricePlan } from "./content/i18n";
+import { BankItem, CarouselItem, content, Language, languages, PricePlan, ShowcaseItem } from "./content/i18n";
 
 const storageKey = "oliveira-systems-language-v2";
 const phone = "5564992233700";
@@ -86,8 +86,8 @@ function App() {
       <main>
         <Hero language={language} whatsappUrl={whatsappUrl} />
         <SystemsSection language={language} />
-        <ConsigAiSection language={language} />
         <EngineSection language={language} />
+        <ConsigAiSection language={language} />
         <PricingSection language={language} whatsappUrl={whatsappUrl} />
         <ContactSection language={language} whatsappUrl={whatsappUrl} />
       </main>
@@ -151,9 +151,9 @@ function LanguageGate({ onChoose }: { onChoose: (language: Language) => void }) 
         <p className="gate-note">{gate.note}</p>
 
         <div className="gate-products" aria-hidden="true">
-          <span>ConsigAI</span>
-          <ArrowRight size={18} />
           <span>Engine Corban</span>
+          <ArrowRight size={18} />
+          <span>ConsigAI</span>
         </div>
       </motion.div>
     </main>
@@ -174,8 +174,8 @@ function Header({
   const t = content[language];
   const navItems = [
     ["#systems", t.nav.systems],
-    ["#consigai", t.nav.consigai],
     ["#engine", t.nav.engine],
+    ["#consigai", t.nav.consigai],
     ["#plans", t.nav.plans],
     ["#contact", t.nav.contact],
   ] as const;
@@ -186,7 +186,7 @@ function Header({
         <img src={asset("oliveira-systems.ico")} alt="" />
         <span>
           <strong>Oliveira Systems</strong>
-          <small>ConsigAI + Engine Corban</small>
+          <small>Engine Corban + ConsigAI</small>
         </span>
       </a>
 
@@ -238,6 +238,36 @@ function LanguageSwitcher({
 
 function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: string }) {
   const t = content[language];
+  const heroBanks = t.engine.banks.slice(0, 16);
+  const statusItems = [
+    { label: "CLT", value: language === "pt-BR" ? "Com proposta" : "With proposal", color: "#00F2C3" },
+    { label: "FGTS", value: language === "pt-BR" ? "Unitário e lote" : "Single and batch", color: "#EC4899" },
+    { label: "Crefaz", value: language === "pt-BR" ? "Conta de luz" : "Energy bill", color: "#D6A229" },
+  ];
+  const engineProofs = t.hero.highlights;
+  const consigAiProofs =
+    language === "pt-BR"
+      ? [
+          { label: "Chat Global", color: "#00F2C3" },
+          { label: "App Android", color: "#57C982" },
+          { label: "Disparador", color: "#F2C94C" },
+          { label: "Aquecedor", color: "#F2994A" },
+          { label: "CRM e agenda", color: "#18B9E6" },
+          { label: "IA comercial", color: "#B58AE6" },
+          { label: "CLT IA planilhas", color: "#EC4899" },
+          { label: "CLT IA Engine", color: "#00E6E6" },
+        ]
+      : [
+          { label: "Global Chat", color: "#00F2C3" },
+          { label: "Android app", color: "#57C982" },
+          { label: "Broadcaster", color: "#F2C94C" },
+          { label: "Chip warmer", color: "#F2994A" },
+          { label: "CRM and schedule", color: "#18B9E6" },
+          { label: "Commercial AI", color: "#B58AE6" },
+          { label: "CLT AI sheets", color: "#EC4899" },
+          { label: "CLT AI Engine", color: "#00E6E6" },
+        ];
+  const consigAiRows = [consigAiProofs, [...consigAiProofs].reverse()];
 
   return (
     <section id="top" className="hero-section">
@@ -274,54 +304,178 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
             <MessageCircle size={18} />
             {t.nav.talk}
           </a>
+
+          <div className="hero-brand-card">
+            <motion.span
+              className="brand-signal"
+              animate={{ x: ["-24%", "124%"] }}
+              transition={{ duration: 5.5, repeat: Infinity, ease: "linear" }}
+              aria-hidden="true"
+            />
+            <div className="brand-card-top">
+              <img src={asset("oliveira-systems.ico")} alt="" />
+              <div>
+                <span>{language === "pt-BR" ? "Engenharia comercial" : "Commercial engineering"}</span>
+                <strong>
+                  {language === "pt-BR"
+                    ? "Do atendimento à consulta, tudo pensado para operação real."
+                    : "From service to consultation, built for real operations."}
+                </strong>
+              </div>
+            </div>
+
+            <div className="hero-insight-grid">
+              <div className="insight-item engine-item">
+                <span>Engine Corban</span>
+                <p>
+                  {language === "pt-BR"
+                    ? "CLT, FGTS e Crefaz em cliente único ou lote, com bancos, roteiros e higienização."
+                    : "CLT, FGTS and Crefaz in single or batch mode, with institutions, scripts and enrichment."}
+                </p>
+              </div>
+              <div className="insight-item consigai-item">
+                <span>ConsigAI</span>
+                <p>
+                  {language === "pt-BR"
+                    ? "Chat global, CRM, Android, disparos, aquecimento e IA comercial para atendimento."
+                    : "Global chat, CRM, Android, broadcasts, warm-up and commercial AI for service."}
+                </p>
+              </div>
+            </div>
+
+            <div className="brand-metrics">
+              <span>{language === "pt-BR" ? "2 sistemas próprios" : "2 proprietary systems"}</span>
+              <span>{language === "pt-BR" ? "sem fidelidade" : "no lock-in"}</span>
+              <span>{language === "pt-BR" ? "ajustes por operação" : "operation-level tuning"}</span>
+            </div>
+          </div>
         </motion.div>
 
         <motion.div
-          className="hero-stage"
+          className="hero-command"
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.15, duration: 0.75, ease: "easeOut" }}
-          aria-label={t.hero.flowTitle}
+          aria-label="Engine Corban operation preview"
         >
-          <div className="stage-heading">
-            <span>{t.hero.flowTitle}</span>
-            <strong>ConsigAI + Engine Corban</strong>
+          <div className="command-topline">
+            <span>Engine Corban</span>
+            <strong>{language === "pt-BR" ? "Operação ativa" : "Active operation"}</strong>
           </div>
 
-          <div className="flow-map">
-            {t.hero.flow.map((step, index) => (
-              <motion.div
-                className="flow-step"
-                key={step}
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.24 + index * 0.1, duration: 0.5 }}
-              >
-                <div className="flow-node">
-                  <strong>{step}</strong>
-                </div>
-                {index < t.hero.flow.length - 1 && <i aria-hidden="true" />}
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="product-orbit">
-            <ProductBadge icon="consigai.ico" title="ConsigAI" />
+          <div className="command-core">
             <motion.div
-              className="orbit-line"
-              animate={{ opacity: [0.35, 1, 0.35] }}
-              transition={{ duration: 2.6, repeat: Infinity }}
+              className="core-radar"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              aria-hidden="true"
             />
-            <ProductBadge icon="engine-corban.ico" title="Engine Corban" />
+            <motion.div
+              className="core-glow"
+              animate={{ scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }}
+              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+              aria-hidden="true"
+            />
+            <div className="core-product">
+              <img src={asset("engine-corban.ico")} alt="" />
+              <span>{language === "pt-BR" ? "Consulta central" : "Central consultation"}</span>
+              <strong>CLT • FGTS • Crefaz</strong>
+            </div>
           </div>
 
-          <div className="hero-highlights">
-            {t.hero.highlights.map((item) => (
+          <div className="institution-marquee" aria-label={t.engine.banksTitle}>
+            <motion.div
+              className="institution-track"
+              animate={{ x: ["0%", "-50%"] }}
+              transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+            >
+              {[...heroBanks, ...heroBanks].map((bank, index) => (
+                <span
+                  key={`${bank.name}-${index}`}
+                  style={{ "--bank-color": bank.color } as CSSProperties}
+                >
+                  {bank.name}
+                </span>
+              ))}
+            </motion.div>
+          </div>
+
+          <div className="live-console">
+            <div className="console-heading">
+              <span>{language === "pt-BR" ? "Retornos em tempo real" : "Real-time returns"}</span>
+              <strong>{language === "pt-BR" ? "sem API bancária" : "no banking API"}</strong>
+            </div>
+            <div className="console-status">
+              {statusItems.map((item) => (
+                <motion.div
+                  className="status-row"
+                  key={item.label}
+                  style={{ "--status-color": item.color } as CSSProperties}
+                  animate={{ opacity: [0.78, 1, 0.78] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                >
+                  <span>{item.label}</span>
+                  <strong>{item.value}</strong>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          <div className="hero-proof-strip engine-proof-strip">
+            {engineProofs.map((item) => (
               <span key={item}>
                 <Check size={15} />
                 {item}
               </span>
             ))}
+          </div>
+
+          <div className="hero-system-panels">
+            <article className="hero-system-panel consigai-system-panel">
+              <div className="system-panel-heading">
+                <img src={asset("consigai.ico")} alt="" />
+                <div>
+                  <span>ConsigAI</span>
+                  <strong>
+                    {language === "pt-BR"
+                      ? "Atendimento, CRM, Android e IA"
+                      : "Service, CRM, Android and AI"}
+                  </strong>
+                </div>
+              </div>
+              <div className="consigai-proof-grid">
+                <div className="consigai-live-stage">
+                  <div className="consigai-core-card">
+                    <motion.span
+                      animate={{ opacity: [0.45, 1, 0.45] }}
+                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                    />
+                    <img src={asset("consigai.ico")} alt="" />
+                    <span>{language === "pt-BR" ? "Central comercial" : "Commercial hub"}</span>
+                    <strong>ConsigAI</strong>
+                  </div>
+                  {consigAiRows.map((row, rowIndex) => (
+                    <div className="consigai-module-marquee" key={rowIndex}>
+                      <motion.div
+                        className="consigai-module-track"
+                        animate={{ x: rowIndex === 0 ? ["0%", "-50%"] : ["-50%", "0%"] }}
+                        transition={{ duration: 18 + rowIndex * 4, repeat: Infinity, ease: "linear" }}
+                      >
+                        {[...row, ...row].map((item, index) => (
+                          <span
+                            key={`${rowIndex}-${item.label}-${index}`}
+                            style={{ "--module-color": item.color } as CSSProperties}
+                          >
+                            <Sparkles size={14} />
+                            {item.label}
+                          </span>
+                        ))}
+                      </motion.div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </article>
           </div>
         </motion.div>
       </div>
@@ -340,7 +494,7 @@ function ProductBadge({ icon, title }: { icon: string; title: string }) {
 
 function SystemsSection({ language }: { language: Language }) {
   const t = content[language];
-  const icons = [MonitorSmartphone, Search];
+  const icons = [Search, MonitorSmartphone];
 
   return (
     <AnimatedSection id="systems" className="section section-light">
@@ -394,12 +548,18 @@ function EngineSection({ language }: { language: Language }) {
           </div>
           <div className="bank-cloud">
             {t.engine.banks.map((bank) => (
-              <span key={bank}>{bank}</span>
+              <BankTile key={`${bank.category}-${bank.name}`} bank={bank} />
             ))}
           </div>
         </div>
         <FeatureCarousel items={t.engine.features} tone="light" />
       </div>
+
+      <EngineShowcase
+        title={t.engine.showcaseTitle}
+        intro={t.engine.showcaseIntro}
+        items={t.engine.showcase}
+      />
 
       <div className="hygiene-block">
         <h3>{t.engine.hygieneTitle}</h3>
@@ -415,6 +575,89 @@ function EngineSection({ language }: { language: Language }) {
         </div>
       </div>
     </AnimatedSection>
+  );
+}
+
+function EngineShowcase({
+  title,
+  intro,
+  items,
+}: {
+  title: string;
+  intro: string;
+  items: readonly ShowcaseItem[];
+}) {
+  const [emblaRef, emblaApi] = useEmblaCarousel({ align: "start", loop: true });
+  const [selected, setSelected] = useState(0);
+
+  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSelected(emblaApi.selectedScrollSnap());
+    onSelect();
+    emblaApi.on("select", onSelect);
+    emblaApi.on("reInit", onSelect);
+    return () => {
+      emblaApi.off("select", onSelect);
+      emblaApi.off("reInit", onSelect);
+    };
+  }, [emblaApi]);
+
+  return (
+    <div className="engine-showcase">
+      <div className="showcase-header">
+        <div>
+          <span className="panel-kicker">{title}</span>
+          <p>{intro}</p>
+        </div>
+        <div className="showcase-controls">
+          <button type="button" className="icon-button" onClick={scrollPrev} aria-label="Previous screen">
+            <ChevronLeft size={20} />
+          </button>
+          <button type="button" className="icon-button" onClick={scrollNext} aria-label="Next screen">
+            <ChevronRight size={20} />
+          </button>
+        </div>
+      </div>
+
+      <div className="showcase-viewport" ref={emblaRef}>
+        <div className="showcase-track">
+          {items.map((item) => (
+            <article className="showcase-slide" key={item.image}>
+              <div className="showcase-copy">
+                <span>{item.tag}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </div>
+              <figure className="showcase-frame">
+                <img src={asset(item.image)} alt={item.title} loading="lazy" />
+              </figure>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div className="dots showcase-dots" aria-hidden="true">
+        {items.map((item, index) => (
+          <span key={item.image} className={index === selected ? "is-active" : ""} />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function BankTile({ bank }: { bank: BankItem }) {
+  return (
+    <motion.article
+      className="bank-tile"
+      style={{ "--bank-color": bank.color } as CSSProperties}
+      whileHover={{ y: -3, scale: 1.015 }}
+    >
+      <strong>{bank.name}</strong>
+      <span>{bank.category}</span>
+    </motion.article>
   );
 }
 
