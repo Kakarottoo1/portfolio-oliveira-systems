@@ -44,6 +44,29 @@ function getStoredLanguage(): Language | null {
   }
 }
 
+function shouldReduceHeroMotion() {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia("(max-width: 760px), (prefers-reduced-motion: reduce)").matches;
+}
+
+function useReduceHeroMotion() {
+  const [reduceMotion, setReduceMotion] = useState(shouldReduceHeroMotion);
+
+  useEffect(() => {
+    const queries = [
+      window.matchMedia("(max-width: 760px)"),
+      window.matchMedia("(prefers-reduced-motion: reduce)"),
+    ];
+    const update = () => setReduceMotion(queries.some((query) => query.matches));
+
+    update();
+    queries.forEach((query) => query.addEventListener("change", update));
+    return () => queries.forEach((query) => query.removeEventListener("change", update));
+  }, []);
+
+  return reduceMotion;
+}
+
 function App() {
   const [language, setLanguage] = useState<Language | null>(() => getStoredLanguage());
   const [menuOpen, setMenuOpen] = useState(false);
@@ -238,6 +261,7 @@ function LanguageSwitcher({
 
 function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: string }) {
   const t = content[language];
+  const reduceHeroMotion = useReduceHeroMotion();
   const heroBanks = t.engine.banks.slice(0, 16);
   const statusItems = [
     { label: "CLT", value: language === "pt-BR" ? "Com proposta" : "With proposal", color: "#00F2C3" },
@@ -267,16 +291,19 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
           { label: "CLT AI sheets", color: "#EC4899" },
           { label: "CLT AI Engine", color: "#00E6E6" },
         ];
-  const consigAiRows = [consigAiProofs, [...consigAiProofs].reverse()];
+  const visibleHeroBanks = [...heroBanks, ...heroBanks];
+  const consigAiRows = reduceHeroMotion ? [consigAiProofs] : [consigAiProofs, [...consigAiProofs].reverse()];
 
   return (
     <section id="top" className="hero-section">
       <div className="hero-background" aria-hidden="true">
-        <motion.span
-          className="scan-line"
-          animate={{ x: ["-15%", "115%"] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
-        />
+        {!reduceHeroMotion && (
+          <motion.span
+            className="scan-line"
+            animate={{ x: ["-15%", "115%"] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+          />
+        )}
       </div>
 
       <div className="section-inner hero-inner">
@@ -308,8 +335,8 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
           <div className="hero-brand-card">
             <motion.span
               className="brand-signal"
-              animate={{ x: ["-24%", "124%"] }}
-              transition={{ duration: 5.5, repeat: Infinity, ease: "linear" }}
+              animate={reduceHeroMotion ? undefined : { x: ["-24%", "124%"] }}
+              transition={reduceHeroMotion ? undefined : { duration: 5.5, repeat: Infinity, ease: "linear" }}
               aria-hidden="true"
             />
             <div className="brand-card-top">
@@ -366,14 +393,14 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
           <div className="command-core">
             <motion.div
               className="core-radar"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 18, repeat: Infinity, ease: "linear" }}
+              animate={reduceHeroMotion ? undefined : { rotate: 360 }}
+              transition={reduceHeroMotion ? undefined : { duration: 18, repeat: Infinity, ease: "linear" }}
               aria-hidden="true"
             />
             <motion.div
               className="core-glow"
-              animate={{ scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }}
-              transition={{ duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
+              animate={reduceHeroMotion ? undefined : { scale: [1, 1.08, 1], opacity: [0.72, 1, 0.72] }}
+              transition={reduceHeroMotion ? undefined : { duration: 2.8, repeat: Infinity, ease: "easeInOut" }}
               aria-hidden="true"
             />
             <div className="core-product">
@@ -385,11 +412,11 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
 
           <div className="institution-marquee" aria-label={t.engine.banksTitle}>
             <motion.div
-              className="institution-track"
-              animate={{ x: ["0%", "-50%"] }}
-              transition={{ duration: 22, repeat: Infinity, ease: "linear" }}
+              className={`institution-track ${reduceHeroMotion ? "mobile-marquee" : ""}`}
+              animate={reduceHeroMotion ? undefined : { x: ["0%", "-50%"] }}
+              transition={reduceHeroMotion ? undefined : { duration: 22, repeat: Infinity, ease: "linear" }}
             >
-              {[...heroBanks, ...heroBanks].map((bank, index) => (
+              {visibleHeroBanks.map((bank, index) => (
                 <span
                   key={`${bank.name}-${index}`}
                   style={{ "--bank-color": bank.color } as CSSProperties}
@@ -411,8 +438,8 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
                   className="status-row"
                   key={item.label}
                   style={{ "--status-color": item.color } as CSSProperties}
-                  animate={{ opacity: [0.78, 1, 0.78] }}
-                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
+                  animate={reduceHeroMotion ? undefined : { opacity: [0.78, 1, 0.78] }}
+                  transition={reduceHeroMotion ? undefined : { duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                 >
                   <span>{item.label}</span>
                   <strong>{item.value}</strong>
@@ -447,8 +474,8 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
                 <div className="consigai-live-stage">
                   <div className="consigai-core-card">
                     <motion.span
-                      animate={{ opacity: [0.45, 1, 0.45] }}
-                      transition={{ duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
+                      animate={reduceHeroMotion ? undefined : { opacity: [0.45, 1, 0.45] }}
+                      transition={reduceHeroMotion ? undefined : { duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
                     />
                     <img src={asset("consigai.ico")} alt="" />
                     <span>{language === "pt-BR" ? "Central comercial" : "Commercial hub"}</span>
@@ -457,9 +484,17 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
                   {consigAiRows.map((row, rowIndex) => (
                     <div className="consigai-module-marquee" key={rowIndex}>
                       <motion.div
-                        className="consigai-module-track"
-                        animate={{ x: rowIndex === 0 ? ["0%", "-50%"] : ["-50%", "0%"] }}
-                        transition={{ duration: 18 + rowIndex * 4, repeat: Infinity, ease: "linear" }}
+                        className={`consigai-module-track ${reduceHeroMotion ? "mobile-marquee" : ""}`}
+                        animate={
+                          reduceHeroMotion
+                            ? undefined
+                            : { x: rowIndex === 0 ? ["0%", "-50%"] : ["-50%", "0%"] }
+                        }
+                        transition={
+                          reduceHeroMotion
+                            ? undefined
+                            : { duration: 18 + rowIndex * 4, repeat: Infinity, ease: "linear" }
+                        }
                       >
                         {[...row, ...row].map((item, index) => (
                           <span

@@ -343,6 +343,7 @@ button {
   bottom: 0;
   width: 160px;
   background: linear-gradient(90deg, transparent, rgba(232, 198, 107, 0.18), transparent);
+  will-change: transform;
 }
 
 .hero-background::before,
@@ -437,6 +438,7 @@ button {
   width: 34%;
   background: linear-gradient(90deg, transparent, rgba(232, 198, 107, 0.18), transparent);
   pointer-events: none;
+  will-change: transform;
 }
 
 .brand-card-top,
@@ -627,6 +629,7 @@ button {
   background:
     conic-gradient(from 0deg, transparent 0 58%, rgba(232, 198, 107, 0.26) 64%, transparent 72%),
     repeating-radial-gradient(circle, transparent 0 32px, rgba(232, 198, 107, 0.13) 33px 34px);
+  will-change: transform;
 }
 
 .core-glow {
@@ -635,6 +638,7 @@ button {
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(0, 242, 195, 0.8), var(--gold-light), transparent);
   box-shadow: 0 0 28px rgba(0, 242, 195, 0.42);
+  will-change: transform, opacity;
 }
 
 .core-product {
@@ -701,6 +705,7 @@ button {
   display: flex;
   width: max-content;
   gap: 10px;
+  will-change: transform;
 }
 
 .institution-track span {
@@ -965,6 +970,7 @@ button {
   display: flex;
   width: max-content;
   gap: 10px;
+  will-change: transform;
 }
 
 .consigai-module-track span {
@@ -986,6 +992,16 @@ button {
 
 .consigai-module-track svg {
   flex: 0 0 auto;
+}
+
+@keyframes mobile-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
 }
 
 .stage-heading {
@@ -1834,6 +1850,46 @@ button {
 
   .button {
     width: 100%;
+  }
+
+  .site-header {
+    backdrop-filter: none;
+  }
+
+  .hero-background::before {
+    opacity: 0.35;
+  }
+
+  .hero-brand-card,
+  .hero-command,
+  .core-product {
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
+  }
+
+  .hero-command::before {
+    mask-image: none;
+    opacity: 0.45;
+  }
+
+  .core-radar {
+    opacity: 0.62;
+    background:
+      radial-gradient(circle, transparent 0 52%, rgba(232, 198, 107, 0.18) 53% 54%, transparent 55%),
+      repeating-radial-gradient(circle, transparent 0 32px, rgba(232, 198, 107, 0.12) 33px 34px);
+  }
+
+  .core-glow {
+    box-shadow: 0 0 12px rgba(0, 242, 195, 0.32);
+  }
+
+  .institution-track.mobile-marquee,
+  .consigai-module-track.mobile-marquee {
+    animation: mobile-marquee 26s linear infinite;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .consigai-module-track.mobile-marquee {
+    animation-duration: 22s;
   }
 
   .section {
