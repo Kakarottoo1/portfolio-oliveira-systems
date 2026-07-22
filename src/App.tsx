@@ -684,51 +684,51 @@ function EngineDownloads({
 }) {
   return (
     <div className="engine-download-block">
-      <div className="engine-download-header">
-        <div>
+      <div className="engine-download-panel">
+        <div className="engine-download-header">
           <span className="panel-kicker">{eyebrow}</span>
           <h3>{title}</h3>
           <p>{intro}</p>
+          <span className="download-trial">
+            <ShieldCheck size={18} />
+            {trial}
+          </span>
         </div>
-        <span className="download-trial">
-          <ShieldCheck size={18} />
-          {trial}
-        </span>
-      </div>
 
-      <div className="engine-download-grid">
-        {items.map((item) => {
-          const Icon = item.kind === "windows" ? MonitorSmartphone : Smartphone;
+        <div className="engine-download-grid">
+          {items.map((item) => {
+            const Icon = item.kind === "windows" ? MonitorSmartphone : Smartphone;
 
-          return (
-            <motion.article
-              className={`engine-download-card ${item.kind === "windows" ? "download-main" : "download-companion"}`}
-              key={item.kind}
-              whileHover={{ y: -4 }}
-            >
-              <div className="download-card-top">
+            return (
+              <motion.article
+                className={`engine-download-card ${item.kind === "windows" ? "download-main" : "download-companion"}`}
+                key={item.kind}
+                whileHover={{ y: -3 }}
+              >
                 <span className="download-icon">
                   <Icon size={24} />
                 </span>
-                <span className="download-meta">
+                <div className="download-card-copy">
+                  <div className="download-card-title">
+                    <h4>{item.title}</h4>
+                    <span>{item.size}</span>
+                  </div>
                   <strong>{item.badge}</strong>
-                  <small>{item.size}</small>
-                </span>
-              </div>
-              <h4>{item.title}</h4>
-              <p>{item.body}</p>
-              <a
-                className="button button-primary"
-                href={engineDownloadLinks[item.kind]}
-                download
-                aria-label={`${item.cta} - ${item.size}`}
-              >
-                <Download size={18} />
-                {item.cta}
-              </a>
-            </motion.article>
-          );
-        })}
+                  <p>{item.body}</p>
+                </div>
+                <a
+                  className="button button-primary download-button"
+                  href={engineDownloadLinks[item.kind]}
+                  download
+                  aria-label={`${item.cta} - ${item.size}`}
+                >
+                  <Download size={18} />
+                  {item.cta}
+                </a>
+              </motion.article>
+            );
+          })}
+        </div>
       </div>
     </div>
   );
