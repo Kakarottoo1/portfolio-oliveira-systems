@@ -7,6 +7,7 @@ import {
   Check,
   ChevronLeft,
   ChevronRight,
+  Download,
   Flame,
   Globe2,
   Landmark,
@@ -27,6 +28,11 @@ import { BankItem, CarouselItem, content, Language, languages, PricePlan, Showca
 
 const storageKey = "oliveira-systems-language-v2";
 const phone = "5564992233700";
+const engineDownloadLinks = {
+  windows:
+    "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.4/EngineCorban_Setup_v4.4.exe",
+  android: "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.4/Engine_v5.apk",
+} as const;
 
 const sectionReveal = {
   hidden: { opacity: 0, y: 28 },
@@ -616,6 +622,14 @@ function EngineSection({ language }: { language: Language }) {
         intro={t.engine.videoIntro}
         note={t.engine.videoNote}
       />
+
+      <EngineDownloads
+        eyebrow={t.engine.downloadEyebrow}
+        title={t.engine.downloadTitle}
+        intro={t.engine.downloadIntro}
+        trial={t.engine.downloadTrial}
+        items={t.engine.downloads}
+      />
     </AnimatedSection>
   );
 }
@@ -644,6 +658,78 @@ function EngineVideo({
           <source src={asset("engine-apresentacao.mp4")} type="video/mp4" />
         </video>
       </figure>
+    </div>
+  );
+}
+
+function EngineDownloads({
+  eyebrow,
+  title,
+  intro,
+  trial,
+  items,
+}: {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  trial: string;
+  items: readonly {
+    kind: keyof typeof engineDownloadLinks;
+    badge: string;
+    title: string;
+    size: string;
+    body: string;
+    cta: string;
+  }[];
+}) {
+  return (
+    <div className="engine-download-block">
+      <div className="engine-download-header">
+        <div>
+          <span className="panel-kicker">{eyebrow}</span>
+          <h3>{title}</h3>
+          <p>{intro}</p>
+        </div>
+        <span className="download-trial">
+          <ShieldCheck size={18} />
+          {trial}
+        </span>
+      </div>
+
+      <div className="engine-download-grid">
+        {items.map((item) => {
+          const Icon = item.kind === "windows" ? MonitorSmartphone : Smartphone;
+
+          return (
+            <motion.article
+              className={`engine-download-card ${item.kind === "windows" ? "download-main" : "download-companion"}`}
+              key={item.kind}
+              whileHover={{ y: -4 }}
+            >
+              <div className="download-card-top">
+                <span className="download-icon">
+                  <Icon size={24} />
+                </span>
+                <span className="download-meta">
+                  <strong>{item.badge}</strong>
+                  <small>{item.size}</small>
+                </span>
+              </div>
+              <h4>{item.title}</h4>
+              <p>{item.body}</p>
+              <a
+                className="button button-primary"
+                href={engineDownloadLinks[item.kind]}
+                download
+                aria-label={`${item.cta} - ${item.size}`}
+              >
+                <Download size={18} />
+                {item.cta}
+              </a>
+            </motion.article>
+          );
+        })}
+      </div>
     </div>
   );
 }

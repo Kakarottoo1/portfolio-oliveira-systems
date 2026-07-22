@@ -308,6 +308,31 @@ export const content = {
         "Uma demonstração rápida do Engine em operação, com consultas, lote, instituições, FGTS, Crefaz, roteiros e organização da proposta.",
       videoNote:
         "O vídeo fica com controle manual para o visitante assistir no próprio ritmo, sem carregar pesado antes do play.",
+      downloadEyebrow: "Downloads oficiais",
+      downloadTitle: "Baixe o Engine para Windows e teste por 24h",
+      downloadIntro:
+        "O Engine principal roda no computador Windows. O app Android é um complemento para acompanhar a operação e fazer consultas conectadas ao Engine PC.",
+      downloadTrial: "Teste grátis do Engine PC por 24h",
+      downloads: [
+        {
+          kind: "windows",
+          badge: "Sistema principal",
+          title: "Engine Corban para Windows",
+          size: "aprox. 110 MB",
+          body:
+            "Sistema principal da operação. Instale no computador para consultar instituições, rodar lote, roteiros, higienizadores e propostas.",
+          cta: "Baixar Engine para Windows",
+        },
+        {
+          kind: "android",
+          badge: "Complemento",
+          title: "App Android que acompanha o Engine PC",
+          size: "aprox. 49 MB",
+          body:
+            "Aplicativo para acompanhar o Engine PC e fazer consultas pelo celular com base na operação principal. Não substitui o sistema do computador.",
+          cta: "Baixar app complementar",
+        },
+      ],
     },
     plans: {
       eyebrow: "Planos e licenças",
@@ -633,6 +658,31 @@ export const content = {
         "A quick demonstration of Engine in operation, with consultations, batch processing, institutions, FGTS, Crefaz, scripts and proposal organization.",
       videoNote:
         "The video uses manual controls so visitors can watch at their own pace without loading heavily before playback.",
+      downloadEyebrow: "Official downloads",
+      downloadTitle: "Download Engine for Windows and start a 24-hour trial",
+      downloadIntro:
+        "The main Engine system runs on a Windows desktop. The Android app is a companion for monitoring the operation and running consultations connected to Engine PC.",
+      downloadTrial: "Free 24-hour Engine PC trial",
+      downloads: [
+        {
+          kind: "windows",
+          badge: "Main system",
+          title: "Engine Corban for Windows",
+          size: "approx. 110 MB",
+          body:
+            "Main operating system. Install it on the desktop to consult institutions, process batches, scripts, enrichers and proposals.",
+          cta: "Download Engine for Windows",
+        },
+        {
+          kind: "android",
+          badge: "Companion",
+          title: "Android app that follows Engine PC",
+          size: "approx. 49 MB",
+          body:
+            "App for following Engine PC and running consultations from the phone based on the main operation. It does not replace the desktop system.",
+          cta: "Download companion app",
+        },
+      ],
     },
     plans: {
       eyebrow: "Plans and licenses",
