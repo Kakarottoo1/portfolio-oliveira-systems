@@ -6,3 +6,9 @@ dist
 npm-debug.log*
 responsive-check
 *.tsbuildinfo
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+!.env.example
