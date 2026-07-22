@@ -609,7 +609,42 @@ function EngineSection({ language }: { language: Language }) {
           ))}
         </div>
       </div>
+
+      <EngineVideo
+        eyebrow={t.engine.videoEyebrow}
+        title={t.engine.videoTitle}
+        intro={t.engine.videoIntro}
+        note={t.engine.videoNote}
+      />
     </AnimatedSection>
+  );
+}
+
+function EngineVideo({
+  eyebrow,
+  title,
+  intro,
+  note,
+}: {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  note: string;
+}) {
+  return (
+    <div className="engine-video-block">
+      <div className="engine-video-copy">
+        <span className="panel-kicker">{eyebrow}</span>
+        <h3>{title}</h3>
+        <p>{intro}</p>
+        <small>{note}</small>
+      </div>
+      <figure className="engine-video-frame">
+        <video controls preload="metadata" playsInline poster={asset("engine-clt-unitario.png")}>
+          <source src={asset("engine-apresentacao.mp4")} type="video/mp4" />
+        </video>
+      </figure>
+    </div>
   );
 }
 

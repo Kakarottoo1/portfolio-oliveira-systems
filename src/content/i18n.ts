@@ -302,6 +302,12 @@ export const content = {
             "Consulta razão social, nome fantasia, situação cadastral, CNAE, endereço e dados principais do CNPJ.",
         },
       ],
+      videoEyebrow: "Apresentação em vídeo",
+      videoTitle: "Engine Corban em funcionamento",
+      videoIntro:
+        "Uma demonstração rápida do Engine em operação, com consultas, lote, instituições, FGTS, Crefaz, roteiros e organização da proposta.",
+      videoNote:
+        "O vídeo fica com controle manual para o visitante assistir no próprio ritmo, sem carregar pesado antes do play.",
     },
     plans: {
       eyebrow: "Planos e licenças",
@@ -621,6 +627,12 @@ export const content = {
             "Checks legal name, trade name, registration status, CNAE, address and main CNPJ details.",
         },
       ],
+      videoEyebrow: "Video presentation",
+      videoTitle: "Engine Corban in action",
+      videoIntro:
+        "A quick demonstration of Engine in operation, with consultations, batch processing, institutions, FGTS, Crefaz, scripts and proposal organization.",
+      videoNote:
+        "The video uses manual controls so visitors can watch at their own pace without loading heavily before playback.",
     },
     plans: {
       eyebrow: "Plans and licenses",
