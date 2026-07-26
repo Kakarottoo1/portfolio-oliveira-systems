@@ -30,8 +30,8 @@ const storageKey = "oliveira-systems-language-v2";
 const phone = "5564992233700";
 const engineDownloadLinks = {
   windows:
-    "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.4/EngineCorban_Setup_v4.4.exe",
-  android: "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.4/Engine_v5.apk",
+    "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.6/EngineCorban_Setup_v4.6.exe",
+  android: "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.6/Engine.apk",
 } as const;
 
 const sectionReveal = {

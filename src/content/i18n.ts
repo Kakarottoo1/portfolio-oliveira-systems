@@ -317,19 +317,19 @@ export const content = {
         {
           kind: "windows",
           badge: "Sistema principal",
-          title: "Engine Corban para Windows",
+          title: "Engine Corban 4.6 para Windows",
           size: "aprox. 110 MB",
           body:
-            "Sistema principal da operação. Instale no computador para consultar instituições, rodar lote, roteiros, higienizadores e propostas.",
+            "Versão atualizada do sistema principal da operação. Instale no computador para consultar instituições, rodar lote, roteiros, higienizadores e propostas.",
           cta: "Baixar Engine para Windows",
         },
         {
           kind: "android",
           badge: "Complemento",
           title: "App Android que acompanha o Engine PC",
-          size: "aprox. 49 MB",
+          size: "aprox. 50 MB",
           body:
-            "Aplicativo para acompanhar o Engine PC e fazer consultas pelo celular com base na operação principal. Não substitui o sistema do computador.",
+            "Aplicativo atualizado para acompanhar o Engine PC e fazer consultas pelo celular com base na operação principal. Não substitui o sistema do computador.",
           cta: "Baixar app complementar",
         },
       ],
@@ -667,19 +667,19 @@ export const content = {
         {
           kind: "windows",
           badge: "Main system",
-          title: "Engine Corban for Windows",
+          title: "Engine Corban 4.6 for Windows",
           size: "approx. 110 MB",
           body:
-            "Main operating system. Install it on the desktop to consult institutions, process batches, scripts, enrichers and proposals.",
+            "Updated version of the main operating system. Install it on the desktop to consult institutions, process batches, scripts, enrichers and proposals.",
           cta: "Download Engine for Windows",
         },
         {
           kind: "android",
           badge: "Companion",
           title: "Android app that follows Engine PC",
-          size: "approx. 49 MB",
+          size: "approx. 50 MB",
           body:
-            "App for following Engine PC and running consultations from the phone based on the main operation. It does not replace the desktop system.",
+            "Updated app for following Engine PC and running consultations from the phone based on the main operation. It does not replace the desktop system.",
           cta: "Download companion app",
         },
       ],
