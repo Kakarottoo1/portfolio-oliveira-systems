@@ -31,7 +31,7 @@ const phone = "5564992233700";
 const engineDownloadLinks = {
   windows:
     "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.6/EngineCorban_Setup_v4.6.exe",
-  android: "https://github.com/Kakarottoo1/portfolio-oliveira-systems/releases/download/engine-v4.6/Engine.apk",
+  android: "https://engine-licencas-api.enginecorban.workers.dev/baixar-app",
 } as const;
 
 const sectionReveal = {
