@@ -512,14 +512,14 @@ button {
   border-color: rgba(232, 198, 107, 0.32);
 }
 
-.insight-item.consigai-item {
+.insight-item.mercantil-item {
   border-color: rgba(0, 242, 195, 0.26);
   background:
     linear-gradient(135deg, rgba(0, 242, 195, 0.08), rgba(255, 255, 255, 0.03)),
     rgba(10, 10, 9, 0.5);
 }
 
-.insight-item.consigai-item span {
+.insight-item.mercantil-item span {
   color: #00f2c3;
 }
 
@@ -587,7 +587,6 @@ button {
 .command-core,
 .institution-marquee,
 .live-console,
-.hero-system-panels,
 .hero-proof-strip {
   position: relative;
   z-index: 1;
@@ -731,8 +730,7 @@ button {
 }
 
 .console-heading,
-.status-row,
-.consigai-layer {
+.status-row {
   display: flex;
   align-items: center;
 }
@@ -778,70 +776,6 @@ button {
   line-height: 1.15;
 }
 
-.hero-system-panels {
-  display: grid;
-  gap: 10px;
-}
-
-.engine-system-panel {
-  display: none;
-}
-
-.hero-system-panel {
-  display: grid;
-  gap: 10px;
-  border-radius: var(--radius);
-  padding: 12px;
-}
-
-.engine-system-panel {
-  border: 1px solid rgba(232, 198, 107, 0.2);
-  background: rgba(232, 198, 107, 0.05);
-}
-
-.consigai-system-panel {
-  min-height: 100%;
-  align-content: stretch;
-  border: 1px solid rgba(0, 242, 195, 0.22);
-  background:
-    linear-gradient(90deg, rgba(0, 242, 195, 0.1), rgba(255, 255, 255, 0.04)),
-    rgba(255, 255, 255, 0.03);
-}
-
-.system-panel-heading {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.system-panel-heading img {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.system-panel-heading div {
-  display: grid;
-  gap: 2px;
-}
-
-.system-panel-heading span {
-  color: var(--gold-light);
-  font-size: 0.8rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.consigai-system-panel .system-panel-heading span {
-  color: #00f2c3;
-}
-
-.system-panel-heading strong {
-  color: rgba(255, 255, 255, 0.84);
-  line-height: 1.25;
-}
-
 .hero-proof-strip {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -872,126 +806,6 @@ button {
 .engine-proof-strip span {
   min-height: 38px;
   font-size: 0.66rem;
-}
-
-.consigai-proof-grid {
-  position: relative;
-  z-index: 1;
-}
-
-.consigai-live-stage {
-  min-height: 250px;
-  display: grid;
-  align-content: center;
-  gap: 14px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 242, 195, 0.22);
-  border-radius: var(--radius);
-  background:
-    radial-gradient(circle at 20% 20%, rgba(0, 242, 195, 0.16), transparent 36%),
-    radial-gradient(circle at 80% 0%, rgba(236, 72, 153, 0.12), transparent 32%),
-    rgba(4, 8, 22, 0.78);
-  padding: 14px;
-}
-
-.consigai-core-card {
-  position: relative;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  gap: 6px;
-  min-height: 120px;
-  border: 1px solid rgba(0, 242, 195, 0.22);
-  border-radius: var(--radius);
-  background: rgba(0, 0, 0, 0.28);
-}
-
-.consigai-core-card > span:first-child {
-  position: absolute;
-  inset: 16px;
-  border: 1px solid rgba(0, 242, 195, 0.35);
-  border-radius: 18px;
-  box-shadow: 0 0 28px rgba(0, 242, 195, 0.2);
-}
-
-.consigai-core-card img {
-  position: relative;
-  width: 58px;
-  height: 58px;
-  border-radius: var(--radius);
-  object-fit: cover;
-}
-
-.consigai-core-card span:not(:first-child) {
-  position: relative;
-  color: #00f2c3;
-  font-size: 0.76rem;
-  font-weight: 900;
-  text-transform: uppercase;
-}
-
-.consigai-core-card strong {
-  position: relative;
-  color: #fff;
-  font-size: 1.18rem;
-}
-
-.consigai-module-marquee {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(0, 242, 195, 0.16);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, 0.04);
-  padding: 8px 0;
-}
-
-.consigai-module-marquee::before,
-.consigai-module-marquee::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  top: 0;
-  bottom: 0;
-  width: 72px;
-  pointer-events: none;
-}
-
-.consigai-module-marquee::before {
-  left: 0;
-  background: linear-gradient(90deg, rgba(5, 28, 24, 0.98), transparent);
-}
-
-.consigai-module-marquee::after {
-  right: 0;
-  background: linear-gradient(270deg, rgba(5, 28, 24, 0.98), transparent);
-}
-
-.consigai-module-track {
-  display: flex;
-  width: max-content;
-  gap: 10px;
-  will-change: transform;
-}
-
-.consigai-module-track span {
-  min-width: 150px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  border: 1px solid color-mix(in srgb, var(--module-color) 70%, transparent);
-  border-radius: 999px;
-  background: color-mix(in srgb, var(--module-color) 13%, transparent);
-  color: var(--module-color);
-  padding: 9px 12px;
-  font-size: 0.78rem;
-  font-weight: 900;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.consigai-module-track svg {
-  flex: 0 0 auto;
 }
 
 @keyframes mobile-marquee {
@@ -1821,8 +1635,10 @@ button {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 16px;
+  max-width: 920px;
+  margin-inline: auto;
 }
 
 .price-card {
@@ -2031,10 +1847,9 @@ button {
     border-bottom: 1px solid rgba(232, 198, 107, 0.18);
   }
 
-  .command-core,
-  .institution-marquee,
-  .live-console,
-  .hero-system-panels {
+.command-core,
+.institution-marquee,
+.live-console {
     grid-column: 1;
     grid-row: auto;
   }
@@ -2128,14 +1943,9 @@ button {
     box-shadow: 0 0 12px rgba(0, 242, 195, 0.32);
   }
 
-  .institution-track.mobile-marquee,
-  .consigai-module-track.mobile-marquee {
+  .institution-track.mobile-marquee {
     animation: mobile-marquee 26s linear infinite;
     transform: translate3d(0, 0, 0);
-  }
-
-  .consigai-module-track.mobile-marquee {
-    animation-duration: 22s;
   }
 
   .section {
@@ -2197,8 +2007,7 @@ button {
     grid-template-columns: 1fr;
   }
 
-  .hero-proof-strip,
-  .consigai-proof-grid {
+  .hero-proof-strip {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -2208,18 +2017,6 @@ button {
 
   .brand-card-top {
     align-items: flex-start;
-  }
-
-  .consigai-live-stage {
-    min-height: auto;
-  }
-
-  .consigai-core-card {
-    min-height: 130px;
-  }
-
-  .consigai-module-track span {
-    min-width: 138px;
   }
 
   .carousel-slide,
@@ -2372,7 +2169,6 @@ button {
   }
 
   .hero-proof-strip,
-  .consigai-proof-grid,
   .console-status {
     grid-template-columns: 1fr;
   }

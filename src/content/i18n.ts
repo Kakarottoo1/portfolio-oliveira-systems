@@ -35,19 +35,18 @@ export const languages: Record<Language, string> = {
 
 export const content = {
   "pt-BR": {
-    metaTitle: "Oliveira Systems | ConsigAI e Engine Corban",
+    metaTitle: "Oliveira Systems | Engine Corban",
     gate: {
       eyebrow: "Oliveira Systems",
       title: "Escolha seu idioma",
       subtitle:
-        "Acesse uma apresentação completa dos sistemas ConsigAI e Engine Corban para automações, atendimento, crédito e operações comerciais.",
+        "Acesse uma apresentação completa do Engine Corban para automações, consultas, crédito e operações comerciais.",
       portuguese: "Português (BR)",
       english: "English",
       note: "Você pode trocar o idioma novamente dentro do site.",
     },
     nav: {
       systems: "Sistemas",
-      consigai: "ConsigAI",
       engine: "Engine",
       plans: "Planos",
       contact: "Contato",
@@ -59,97 +58,47 @@ export const content = {
       eyebrow: "Portfólio empresarial de automações e sistemas",
       title: "Oliveira Systems",
       subtitle:
-        "Engine Corban lidera a operação de consultas, bancos, higienizadores, roteiros e propostas. ConsigAI entra como camada comercial para atendimento, CRM, Android, disparos e IA.",
+        "Engine Corban lidera a operação de consultas, bancos, higienizadores, roteiros e propostas, agora com crédito pessoal Mercantil integrado ao fluxo.",
       primary: "Conhecer o Engine",
       secondary: "Ver planos",
       flowTitle: "Fluxo de operação",
       flow: ["Cliente", "Engine", "Instituições", "Higienização", "Proposta"],
       highlights: [
+        "Crédito pessoal Mercantil integrado",
         "23+ instituições no ecossistema",
         "21 bancos CLT disponíveis",
         "Usuário e senha nas instituições",
         "Sem API bancária",
-        "Até 5 logins simultâneos",
       ],
     },
     systems: {
-      eyebrow: "Dois produtos, uma operação",
-      title: "Engine na frente. ConsigAI no atendimento.",
+      eyebrow: "Engine Corban",
+      title: "Consulta, lote e proposta em uma operação só.",
       intro:
-        "O Engine Corban é o centro de consulta e proposta. O ConsigAI fica abaixo como base de atendimento, CRM, Android, disparos, aquecimento e IA comercial.",
+        "O Engine Corban concentra consultas CLT, FGTS, Crefaz, Mercantil crédito pessoal, roteiros por banco, higienização e processamento em lote.",
       cards: [
         {
           title: "Engine Corban",
           tag: "Consulta, lote e higienização",
           body:
-            "Robô de consultas para consignado CLT, FGTS e empréstimo na conta de luz via formulário, com lote, multi login, roteiros por banco e higienizadores.",
+            "Robô de consultas para consignado CLT, FGTS, empréstimo na conta de luz via formulário e crédito pessoal Mercantil, com lote, multi login, roteiros e higienizadores.",
         },
         {
-          title: "ConsigAI",
-          tag: "CRM, WhatsApp, Android e IA",
+          title: "Mercantil Crédito Pessoal",
+          tag: "Nova integração",
           body:
-            "Central comercial com Chat Global, disparador, aquecedor, app Android, agenda, números conectados e módulos de IA para atendimento e proposta.",
-        },
-      ],
-    },
-    consigai: {
-      eyebrow: "ConsigAI",
-      title: "Central comercial com WhatsApp, Android, disparos, aquecimento e IA",
-      intro:
-        "O Modo CRM concentra a rotina da equipe. O Modo Completo mantém essa base e adiciona a camada de IA para atendimento CLT/FGTS.",
-      crmTitle: "Modo CRM",
-      crmBody:
-        "Ideal para organizar atendimento, números conectados, agenda, clientes, disparos e operação pelo computador ou Android.",
-      completeTitle: "Modo Completo",
-      completeBody:
-        "Adiciona inteligência artificial para conduzir conversas, confirmar dados, contornar objeções e apoiar propostas CLT/FGTS.",
-      modules: [
-        {
-          tag: "Atendimento",
-          title: "Chat Global",
-          body:
-            "Conversas de todos os números conectados em uma central, com filtros, fotos, grupos, chats ocultos/fixados e envio de texto, áudio e mídia.",
-        },
-        {
-          tag: "Mobile",
-          title: "App Android",
-          body:
-            "Aplicativo Android para acompanhar e responder pelo celular, com pareamento por token, conversa em tempo real e acesso fora do computador.",
-        },
-        {
-          tag: "Prospecção",
-          title: "Disparador",
-          body:
-            "Envios por planilha, variações de mensagem, delays, alternância de números, distribuição igualitária ou personalizada e histórico.",
-        },
-        {
-          tag: "Operação",
-          title: "Aquecedor de chips",
-          body:
-            "Conversas entre chips com roteiros, fila de aquecimentos, horários, intervalos, limite diário por número e acompanhamento da sessão.",
-        },
-        {
-          tag: "IA",
-          title: "CLT IA por planilhas",
-          body:
-            "Atendimento automático a partir de planilhas, com confirmação de identidade, proposta, contorno, coleta de dados e sinalização ao consultor.",
-        },
-        {
-          tag: "IA + consulta",
-          title: "CLT IA Engine",
-          body:
-            "Atende clientes fora da planilha, identifica interesse em FGTS ou CLT, orienta a coleta e aciona a consulta quando o cliente está pronto.",
+            "Integração adicionada ao Engine para ampliar a análise além do consignado, mantendo a rotina de consulta e proposta dentro do mesmo fluxo operacional.",
         },
       ],
     },
     engine: {
       eyebrow: "Engine Corban",
-      title: "Engine Corban consulta mais de 23 instituições com lote, roteiros, higienização e multi login",
+      title: "Engine Corban consulta CLT, FGTS, Crefaz e crédito pessoal Mercantil com lote, roteiros, higienização e multi login",
       intro:
-        "Hoje são 21 instituições CLT, bancos FGTS e Crefaz por formulário para empréstimo na conta de luz. A operação consulta CPF por CPF ou planilhas em lote, organiza retornos e prepara a proposta com mais precisão.",
+        "Hoje são 21 instituições CLT, bancos FGTS, Crefaz por formulário para empréstimo na conta de luz e crédito pessoal Mercantil integrado. A operação consulta CPF por CPF ou planilhas em lote, organiza retornos e prepara a proposta com mais precisão.",
       banksTitle: "Instituições por operação",
       banksIntro:
-        "Cada instituição fica separada por cor e categoria para a equipe localizar rápido o banco certo, o tipo de consulta e o fluxo de proposta.",
+        "Cada instituição fica separada por cor e categoria para a equipe localizar rápido o banco certo, o tipo de consulta e o fluxo de proposta, incluindo o crédito pessoal Mercantil.",
       banks: [
         { name: "Banco Prata", category: "CLT", color: "#00F2C3" },
         { name: "Mercantil", category: "CLT", color: "#2F9BFF" },
@@ -172,6 +121,7 @@ export const content = {
         { name: "VCTEX", category: "CLT", color: "#EC4899" },
         { name: "HaveCred", category: "CLT", color: "#57C982" },
         { name: "Zili", category: "CLT", color: "#8E98A5" },
+        { name: "Mercantil Pessoal", category: "Crédito pessoal", color: "#2F9BFF" },
         { name: "Lotus FGTS", category: "FGTS", color: "#263B8F" },
         { name: "Prata FGTS", category: "FGTS", color: "#00F2C3" },
         { name: "Novo Saque FGTS", category: "FGTS", color: "#EF9F27" },
@@ -198,6 +148,12 @@ export const content = {
             "As consultas usam os acessos que a operação já possui nos portais das instituições. Não é necessário contratar API dos bancos.",
         },
         {
+          tag: "Mercantil",
+          title: "Crédito pessoal integrado",
+          body:
+            "Consulta de crédito pessoal Mercantil dentro do Engine, ampliando as oportunidades para clientes fora do fluxo consignado tradicional.",
+        },
+        {
           tag: "Operação",
           title: "Roteiros por banco",
           body:
@@ -218,7 +174,7 @@ export const content = {
       ],
       showcaseTitle: "Engine na prática",
       showcaseIntro:
-        "Telas reais da operação para mostrar como o Engine trabalha em consulta única, lote, FGTS e Crefaz, sempre usando os acessos das instituições por usuário e senha.",
+        "Telas reais da operação para mostrar como o Engine trabalha em consulta única, lote, FGTS, Crefaz e Mercantil pessoal, sempre usando os acessos das instituições por usuário e senha.",
       showcase: [
         {
           tag: "CLT unitário",
@@ -305,7 +261,7 @@ export const content = {
       videoEyebrow: "Apresentação em vídeo",
       videoTitle: "Engine Corban em funcionamento",
       videoIntro:
-        "Uma demonstração rápida do Engine em operação, com consultas, lote, instituições, FGTS, Crefaz, roteiros e organização da proposta.",
+        "Uma demonstração rápida do Engine em operação, com consultas, lote, instituições, FGTS, Crefaz, Mercantil pessoal, roteiros e organização da proposta.",
       videoNote:
         "O vídeo fica com controle manual para o visitante assistir no próprio ritmo, sem carregar pesado antes do play.",
       downloadEyebrow: "Downloads oficiais",
@@ -336,9 +292,9 @@ export const content = {
     },
     plans: {
       eyebrow: "Planos e licenças",
-      title: "Planos claros, sem fidelidade em nenhum sistema",
+      title: "Planos claros para o Engine, sem fidelidade",
       intro:
-        "ConsigAI separa operação sem IA e operação com IA. Engine Corban segue a tabela atual dos planos.",
+        "Engine Corban segue a tabela atual dos planos, com licença mensal e sem fidelidade.",
       payment: "Pagamentos via PIX ou cartão. Desconto acima de 3 contratações nos planos Engine.",
       items: [
         {
@@ -346,7 +302,7 @@ export const content = {
           name: "Plano Engine Completo",
           price: "R$ 119,90/mês",
           note: "Acesso a todo o sistema",
-          features: ["Consulta unitária", "Consulta em lote", "23+ instituições", "Roteiros", "Higienizadores"],
+          features: ["Consulta unitária", "Consulta em lote", "CLT, FGTS, Crefaz e Mercantil pessoal", "Roteiros", "Higienizadores"],
         },
         {
           product: "Engine Corban",
@@ -356,48 +312,32 @@ export const content = {
           featured: true,
           features: ["Acesso completo para master", "Consulta unitária para subusuários", "Até 3 subusuários", "Controle de equipe"],
         },
-        {
-          product: "ConsigAI",
-          name: "Modo CRM",
-          price: "Consultar vendedor",
-          note: "Valor conforme operação",
-          features: ["Chat Global", "App Android", "Disparador", "Aquecedor", "CRM, agenda e conexões"],
-        },
-        {
-          product: "ConsigAI",
-          name: "Modo Completo",
-          price: "Consultar vendedor",
-          note: "Valor conforme operação",
-          featured: true,
-          features: ["Tudo do Modo CRM", "CLT IA por planilhas", "CLT IA Engine", "Roteiros IA", "Modelos e segurança"],
-        },
       ] satisfies PricePlan[],
     },
     contact: {
       eyebrow: "Contato",
       title: "Escolha a licença certa para sua operação",
       body:
-        "Fale com um vendedor para contratar, pedir demonstração ou montar uma proposta entre ConsigAI CRM, ConsigAI Completo, Engine Completo e Engine SUBS. Também analisamos ajustes para outras áreas, como marketing, advocacia, atendimento e operações comerciais.",
+        "Fale com um vendedor para contratar, pedir demonstração ou montar uma proposta entre Engine Completo e Engine SUBS. Também analisamos ajustes para outras áreas, como marketing, advocacia, atendimento e operações comerciais.",
       whatsapp: "Falar pelo WhatsApp",
       compare: "Comparar planos",
-      message: "Olá, quero conhecer os planos ConsigAI e Engine Corban.",
+      message: "Olá, quero conhecer os planos do Engine Corban.",
     },
-    footer: "Automação para crédito, atendimento, vendas e operações comerciais.",
+    footer: "Automação para crédito, consultas, propostas e operações comerciais.",
   },
   en: {
-    metaTitle: "Oliveira Systems | ConsigAI and Engine Corban",
+    metaTitle: "Oliveira Systems | Engine Corban",
     gate: {
       eyebrow: "Oliveira Systems",
       title: "Choose your language",
       subtitle:
-        "Open a complete presentation of ConsigAI and Engine Corban for automation, customer service, credit and business operations.",
+        "Open a complete Engine Corban presentation for automation, consultations, credit and business operations.",
       portuguese: "Português (BR)",
       english: "English",
       note: "You can switch the language again inside the site.",
     },
     nav: {
       systems: "Systems",
-      consigai: "ConsigAI",
       engine: "Engine",
       plans: "Plans",
       contact: "Contact",
@@ -409,97 +349,47 @@ export const content = {
       eyebrow: "Business portfolio for automations and systems",
       title: "Oliveira Systems",
       subtitle:
-        "Engine Corban leads consultations, banks, enrichers, scripts and proposals. ConsigAI works as the commercial layer for service, CRM, Android, broadcasts and AI.",
+        "Engine Corban leads consultations, institutions, enrichers, scripts and proposals, now with Mercantil personal credit integrated into the flow.",
       primary: "Explore Engine",
       secondary: "View plans",
       flowTitle: "Operation flow",
       flow: ["Customer", "Engine", "Institutions", "Enrichment", "Proposal"],
       highlights: [
+        "Mercantil personal credit integrated",
         "23+ institutions in the ecosystem",
         "21 available CLT banks",
         "Institution portal credentials",
         "No banking API required",
-        "Up to 5 simultaneous logins",
       ],
     },
     systems: {
-      eyebrow: "Two products, one operation",
-      title: "Engine first. ConsigAI for service.",
+      eyebrow: "Engine Corban",
+      title: "Consultation, batch processing and proposal in one operation.",
       intro:
-        "Engine Corban is the consultation and proposal center. ConsigAI sits below as the service, CRM, Android, broadcast, warm-up and commercial AI layer.",
+        "Engine Corban concentrates CLT, FGTS, Crefaz, Mercantil personal credit, bank scripts, enrichment and batch processing.",
       cards: [
         {
           title: "Engine Corban",
           tag: "Consultation, batch and enrichment",
           body:
-            "A consultation robot for CLT payroll loans, FGTS and energy-bill loan forms, with batch processing, multi-login, bank scripts and enrichers.",
+            "Consultation robot for CLT payroll credit, FGTS, energy-bill loans through a form flow and Mercantil personal credit, with batch processing, multi-login, scripts and enrichers.",
         },
         {
-          title: "ConsigAI",
-          tag: "CRM, WhatsApp, Android and AI",
+          title: "Mercantil Personal Credit",
+          tag: "New integration",
           body:
-            "A commercial hub with Global Chat, broadcaster, chip warmer, Android app, schedule, connected numbers and AI modules for service and proposals.",
-        },
-      ],
-    },
-    consigai: {
-      eyebrow: "ConsigAI",
-      title: "Commercial hub with WhatsApp, Android, broadcasts, warm-up and AI",
-      intro:
-        "CRM Mode centralizes daily team routines. Full Mode keeps that base and adds AI for CLT/FGTS customer service.",
-      crmTitle: "CRM Mode",
-      crmBody:
-        "Best for organizing service, connected numbers, schedule, customers, broadcasts and operation from desktop or Android.",
-      completeTitle: "Full Mode",
-      completeBody:
-        "Adds artificial intelligence to conduct conversations, confirm data, handle objections and support CLT/FGTS proposals.",
-      modules: [
-        {
-          tag: "Service",
-          title: "Global Chat",
-          body:
-            "Conversations from all connected numbers in one hub, with filters, photos, groups, hidden/pinned chats and text, audio and media sending.",
-        },
-        {
-          tag: "Mobile",
-          title: "Android App",
-          body:
-            "Android app to follow and reply from the phone, with token pairing, real-time conversation and access away from the computer.",
-        },
-        {
-          tag: "Prospecting",
-          title: "Broadcaster",
-          body:
-            "Spreadsheet-based sending, message variations, delays, number rotation, equal or custom distribution and history.",
-        },
-        {
-          tag: "Operation",
-          title: "Chip warmer",
-          body:
-            "Conversations between chips with scripts, warm-up queue, schedules, intervals, daily limit per number and session tracking.",
-        },
-        {
-          tag: "AI",
-          title: "CLT AI by spreadsheets",
-          body:
-            "Automated service from spreadsheets, with identity confirmation, proposal, objection handling, data collection and consultant signaling.",
-        },
-        {
-          tag: "AI + consultation",
-          title: "CLT AI Engine",
-          body:
-            "Handles customers outside the spreadsheet, identifies FGTS or CLT interest, guides data collection and triggers consultation when ready.",
+            "Integration added to Engine to expand analysis beyond payroll credit while keeping consultation and proposal inside the same operational flow.",
         },
       ],
     },
     engine: {
       eyebrow: "Engine Corban",
-      title: "Engine Corban consults 23+ institutions with batch processing, scripts, enrichment and multi-login",
+      title: "Engine Corban consults CLT, FGTS, Crefaz and Mercantil personal credit with batch processing, scripts, enrichment and multi-login",
       intro:
-        "Today it includes 21 CLT institutions, FGTS banks and Crefaz through a form flow for energy-bill loans. The operation can consult one customer at a time or process spreadsheets in batch, organize returns and prepare proposals with more precision.",
+        "Today it includes 21 CLT institutions, FGTS banks, Crefaz through a form flow for energy-bill loans and integrated Mercantil personal credit. The operation can consult one customer at a time or process spreadsheets in batch, organize returns and prepare proposals with more precision.",
       banksTitle: "Institutions by operation",
       banksIntro:
-        "Each institution is separated by color and category so the team can quickly find the right bank, consultation type and proposal flow.",
+        "Each institution is separated by color and category so the team can quickly find the right bank, consultation type and proposal flow, including Mercantil personal credit.",
       banks: [
         { name: "Banco Prata", category: "CLT", color: "#00F2C3" },
         { name: "Mercantil", category: "CLT", color: "#2F9BFF" },
@@ -522,6 +412,7 @@ export const content = {
         { name: "VCTEX", category: "CLT", color: "#EC4899" },
         { name: "HaveCred", category: "CLT", color: "#57C982" },
         { name: "Zili", category: "CLT", color: "#8E98A5" },
+        { name: "Mercantil Personal", category: "Personal credit", color: "#2F9BFF" },
         { name: "Lotus FGTS", category: "FGTS", color: "#263B8F" },
         { name: "Prata FGTS", category: "FGTS", color: "#00F2C3" },
         { name: "Novo Saque FGTS", category: "FGTS", color: "#EF9F27" },
@@ -548,6 +439,12 @@ export const content = {
             "Consultations use the credentials the operation already has in each institution portal. No banking API contract is required.",
         },
         {
+          tag: "Mercantil",
+          title: "Integrated personal credit",
+          body:
+            "Mercantil personal credit consultation inside Engine, expanding opportunities for customers outside the traditional payroll-credit flow.",
+        },
+        {
           tag: "Operation",
           title: "Bank scripts",
           body:
@@ -568,7 +465,7 @@ export const content = {
       ],
       showcaseTitle: "Engine in practice",
       showcaseIntro:
-        "Real operation screens showing how Engine handles single consultation, batch processing, FGTS and Crefaz, using institution portal credentials.",
+        "Real operation screens showing how Engine handles single consultation, batch processing, FGTS, Crefaz and Mercantil personal credit, using institution portal credentials.",
       showcase: [
         {
           tag: "Single CLT",
@@ -655,7 +552,7 @@ export const content = {
       videoEyebrow: "Video presentation",
       videoTitle: "Engine Corban in action",
       videoIntro:
-        "A quick demonstration of Engine in operation, with consultations, batch processing, institutions, FGTS, Crefaz, scripts and proposal organization.",
+        "A quick demonstration of Engine in operation, with consultations, batch processing, institutions, FGTS, Crefaz, Mercantil personal credit, scripts and proposal organization.",
       videoNote:
         "The video uses manual controls so visitors can watch at their own pace without loading heavily before playback.",
       downloadEyebrow: "Official downloads",
@@ -686,9 +583,9 @@ export const content = {
     },
     plans: {
       eyebrow: "Plans and licenses",
-      title: "Clear plans, no loyalty contract in any system",
+      title: "Clear Engine plans, no loyalty contract",
       intro:
-        "ConsigAI separates the operation without AI from the operation with AI. Engine Corban follows the current plan table.",
+        "Engine Corban follows the current plan table, with monthly license and no loyalty contract.",
       payment: "Payments via PIX or card. Discount above 3 Engine contracts.",
       items: [
         {
@@ -696,7 +593,7 @@ export const content = {
           name: "Engine Complete Plan",
           price: "R$ 119.90/month",
           note: "Access to the full system",
-          features: ["Single consultation", "Batch consultation", "23+ institutions", "Scripts", "Data enrichers"],
+          features: ["Single consultation", "Batch consultation", "CLT, FGTS, Crefaz and Mercantil personal credit", "Scripts", "Data enrichers"],
         },
         {
           product: "Engine Corban",
@@ -706,32 +603,17 @@ export const content = {
           featured: true,
           features: ["Full master access", "Single consultation for sub-users", "Up to 3 sub-users", "Team control"],
         },
-        {
-          product: "ConsigAI",
-          name: "CRM Mode",
-          price: "Ask the seller",
-          note: "Adjusted to the operation",
-          features: ["Global Chat", "Android app", "Broadcaster", "Chip warmer", "CRM, schedule and connections"],
-        },
-        {
-          product: "ConsigAI",
-          name: "Full Mode",
-          price: "Ask the seller",
-          note: "Price according to operation",
-          featured: true,
-          features: ["Everything in CRM Mode", "CLT AI by spreadsheets", "CLT AI Engine", "AI scripts", "Models and safety"],
-        },
       ] satisfies PricePlan[],
     },
     contact: {
       eyebrow: "Contact",
       title: "Choose the right license for your operation",
       body:
-        "Talk to a seller to subscribe, request a demo or build a proposal between ConsigAI CRM, ConsigAI Full, Engine Complete and Engine SUBS. We also analyze adaptations for other fields, such as marketing, law firms, customer service and commercial operations.",
+        "Talk to a seller to subscribe, request a demo or build a proposal between Engine Complete and Engine SUBS. We also analyze adaptations for other fields, such as marketing, law firms, customer service and commercial operations.",
       whatsapp: "Talk on WhatsApp",
       compare: "Compare plans",
-      message: "Hello, I want to know the ConsigAI and Engine Corban plans.",
+      message: "Hello, I want to know the Engine Corban plans.",
     },
-    footer: "Automation for credit, customer service, sales and business operations.",
+    footer: "Automation for credit, consultations, proposals and business operations.",
   },
 } as const;

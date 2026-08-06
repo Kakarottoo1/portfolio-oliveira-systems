@@ -116,7 +116,6 @@ function App() {
         <Hero language={language} whatsappUrl={whatsappUrl} />
         <SystemsSection language={language} />
         <EngineSection language={language} />
-        <ConsigAiSection language={language} />
         <PricingSection language={language} whatsappUrl={whatsappUrl} />
         <ContactSection language={language} whatsappUrl={whatsappUrl} />
       </main>
@@ -182,7 +181,7 @@ function LanguageGate({ onChoose }: { onChoose: (language: Language) => void }) 
         <div className="gate-products" aria-hidden="true">
           <span>Engine Corban</span>
           <ArrowRight size={18} />
-          <span>ConsigAI</span>
+          <span>Oliveira Systems</span>
         </div>
       </motion.div>
     </main>
@@ -204,7 +203,6 @@ function Header({
   const navItems = [
     ["#systems", t.nav.systems],
     ["#engine", t.nav.engine],
-    ["#consigai", t.nav.consigai],
     ["#plans", t.nav.plans],
     ["#contact", t.nav.contact],
   ] as const;
@@ -215,7 +213,7 @@ function Header({
         <img src={asset("oliveira-systems.ico")} alt="" />
         <span>
           <strong>Oliveira Systems</strong>
-          <small>Engine Corban + ConsigAI</small>
+          <small>Engine Corban</small>
         </span>
       </a>
 
@@ -273,32 +271,10 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
     { label: "CLT", value: language === "pt-BR" ? "Com proposta" : "With proposal", color: "#00F2C3" },
     { label: "FGTS", value: language === "pt-BR" ? "Unitário e lote" : "Single and batch", color: "#EC4899" },
     { label: "Crefaz", value: language === "pt-BR" ? "Conta de luz" : "Energy bill", color: "#D6A229" },
+    { label: "Mercantil", value: language === "pt-BR" ? "Crédito pessoal" : "Personal credit", color: "#2F9BFF" },
   ];
   const engineProofs = t.hero.highlights;
-  const consigAiProofs =
-    language === "pt-BR"
-      ? [
-          { label: "Chat Global", color: "#00F2C3" },
-          { label: "App Android", color: "#57C982" },
-          { label: "Disparador", color: "#F2C94C" },
-          { label: "Aquecedor", color: "#F2994A" },
-          { label: "CRM e agenda", color: "#18B9E6" },
-          { label: "IA comercial", color: "#B58AE6" },
-          { label: "CLT IA planilhas", color: "#EC4899" },
-          { label: "CLT IA Engine", color: "#00E6E6" },
-        ]
-      : [
-          { label: "Global Chat", color: "#00F2C3" },
-          { label: "Android app", color: "#57C982" },
-          { label: "Broadcaster", color: "#F2C94C" },
-          { label: "Chip warmer", color: "#F2994A" },
-          { label: "CRM and schedule", color: "#18B9E6" },
-          { label: "Commercial AI", color: "#B58AE6" },
-          { label: "CLT AI sheets", color: "#EC4899" },
-          { label: "CLT AI Engine", color: "#00E6E6" },
-        ];
   const visibleHeroBanks = [...heroBanks, ...heroBanks];
-  const consigAiRows = reduceHeroMotion ? [consigAiProofs] : [consigAiProofs, [...consigAiProofs].reverse()];
 
   return (
     <section id="top" className="hero-section">
@@ -362,22 +338,22 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
                 <span>Engine Corban</span>
                 <p>
                   {language === "pt-BR"
-                    ? "CLT, FGTS e Crefaz em cliente único ou lote, com bancos, roteiros e higienização."
-                    : "CLT, FGTS and Crefaz in single or batch mode, with institutions, scripts and enrichment."}
+                    ? "CLT, FGTS, Crefaz e Mercantil pessoal em cliente único ou lote, com roteiros e higienização."
+                    : "CLT, FGTS, Crefaz and Mercantil personal credit in single or batch mode, with scripts and enrichment."}
                 </p>
               </div>
-              <div className="insight-item consigai-item">
-                <span>ConsigAI</span>
+              <div className="insight-item mercantil-item">
+                <span>Mercantil Pessoal</span>
                 <p>
                   {language === "pt-BR"
-                    ? "Chat global, CRM, Android, disparos, aquecimento e IA comercial para atendimento."
-                    : "Global chat, CRM, Android, broadcasts, warm-up and commercial AI for service."}
+                    ? "Crédito pessoal integrado ao fluxo do Engine, ampliando as oportunidades além do consignado."
+                    : "Personal credit integrated into the Engine flow, expanding opportunities beyond payroll credit."}
                 </p>
               </div>
             </div>
 
             <div className="brand-metrics">
-              <span>{language === "pt-BR" ? "2 sistemas próprios" : "2 proprietary systems"}</span>
+              <span>{language === "pt-BR" ? "Engine em evolução" : "Engine evolving"}</span>
               <span>{language === "pt-BR" ? "sem fidelidade" : "no lock-in"}</span>
               <span>{language === "pt-BR" ? "ajustes por operação" : "operation-level tuning"}</span>
             </div>
@@ -412,7 +388,7 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
             <div className="core-product">
               <img src={asset("engine-corban.ico")} alt="" />
               <span>{language === "pt-BR" ? "Consulta central" : "Central consultation"}</span>
-              <strong>CLT • FGTS • Crefaz</strong>
+              <strong>CLT • FGTS • Crefaz • Mercantil</strong>
             </div>
           </div>
 
@@ -462,62 +438,6 @@ function Hero({ language, whatsappUrl }: { language: Language; whatsappUrl: stri
               </span>
             ))}
           </div>
-
-          <div className="hero-system-panels">
-            <article className="hero-system-panel consigai-system-panel">
-              <div className="system-panel-heading">
-                <img src={asset("consigai.ico")} alt="" />
-                <div>
-                  <span>ConsigAI</span>
-                  <strong>
-                    {language === "pt-BR"
-                      ? "Atendimento, CRM, Android e IA"
-                      : "Service, CRM, Android and AI"}
-                  </strong>
-                </div>
-              </div>
-              <div className="consigai-proof-grid">
-                <div className="consigai-live-stage">
-                  <div className="consigai-core-card">
-                    <motion.span
-                      animate={reduceHeroMotion ? undefined : { opacity: [0.45, 1, 0.45] }}
-                      transition={reduceHeroMotion ? undefined : { duration: 2.2, repeat: Infinity, ease: "easeInOut" }}
-                    />
-                    <img src={asset("consigai.ico")} alt="" />
-                    <span>{language === "pt-BR" ? "Central comercial" : "Commercial hub"}</span>
-                    <strong>ConsigAI</strong>
-                  </div>
-                  {consigAiRows.map((row, rowIndex) => (
-                    <div className="consigai-module-marquee" key={rowIndex}>
-                      <motion.div
-                        className={`consigai-module-track ${reduceHeroMotion ? "mobile-marquee" : ""}`}
-                        animate={
-                          reduceHeroMotion
-                            ? undefined
-                            : { x: rowIndex === 0 ? ["0%", "-50%"] : ["-50%", "0%"] }
-                        }
-                        transition={
-                          reduceHeroMotion
-                            ? undefined
-                            : { duration: 18 + rowIndex * 4, repeat: Infinity, ease: "linear" }
-                        }
-                      >
-                        {[...row, ...row].map((item, index) => (
-                          <span
-                            key={`${rowIndex}-${item.label}-${index}`}
-                            style={{ "--module-color": item.color } as CSSProperties}
-                          >
-                            <Sparkles size={14} />
-                            {item.label}
-                          </span>
-                        ))}
-                      </motion.div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </article>
-          </div>
         </motion.div>
       </div>
     </section>
@@ -553,23 +473,6 @@ function SystemsSection({ language }: { language: Language }) {
           );
         })}
       </div>
-    </AnimatedSection>
-  );
-}
-
-function ConsigAiSection({ language }: { language: Language }) {
-  const t = content[language];
-
-  return (
-    <AnimatedSection id="consigai" className="section section-dark">
-      <div className="split-heading">
-        <SectionHeading eyebrow={t.consigai.eyebrow} title={t.consigai.title} body={t.consigai.intro} />
-        <div className="license-pair">
-          <LicenseBlock icon={<Smartphone size={24} />} title={t.consigai.crmTitle} body={t.consigai.crmBody} />
-          <LicenseBlock icon={<Bot size={24} />} title={t.consigai.completeTitle} body={t.consigai.completeBody} />
-        </div>
-      </div>
-      <FeatureCarousel items={t.consigai.modules} tone="dark" />
     </AnimatedSection>
   );
 }
@@ -855,16 +758,6 @@ function ContactSection({ language, whatsappUrl }: { language: Language; whatsap
         </div>
       </div>
     </AnimatedSection>
-  );
-}
-
-function LicenseBlock({ icon, title, body }: { icon: ReactNode; title: string; body: string }) {
-  return (
-    <motion.article className="license-block" whileHover={{ y: -4 }}>
-      <div className="icon-ring">{icon}</div>
-      <h3>{title}</h3>
-      <p>{body}</p>
-    </motion.article>
   );
 }
 
