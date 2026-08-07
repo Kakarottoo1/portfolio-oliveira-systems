@@ -273,11 +273,11 @@ export const content = {
         {
           kind: "windows",
           badge: "Sistema principal",
-          title: "Engine Corban 4.6 para Windows",
+          title: "Engine Corban para Windows",
           size: "aprox. 110 MB",
           body:
             "Versão atualizada do sistema principal da operação. Instale no computador para consultar instituições, rodar lote, roteiros, higienizadores e propostas.",
-          cta: "Baixar Engine para Windows",
+          cta: "Baixar software",
         },
         {
           kind: "android",
@@ -564,11 +564,11 @@ export const content = {
         {
           kind: "windows",
           badge: "Main system",
-          title: "Engine Corban 4.6 for Windows",
+          title: "Engine Corban for Windows",
           size: "approx. 110 MB",
           body:
             "Updated version of the main operating system. Install it on the desktop to consult institutions, process batches, scripts, enrichers and proposals.",
-          cta: "Download Engine for Windows",
+          cta: "Download software",
         },
         {
           kind: "android",
